@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Challenges</title>
+</head>
+<body>
+
+    <script>
+
+        function myfunc(){
+            var name = prompt("Enter your name")   //"Koffi";
+            var surname =  prompt("Enter you surname")   //"Gbagbe";
+            console.log(name +" " + surname );
+        }
+
+        // myfunc();
+
+
+        // generate random number
+
+        // console.log(Math.random() + "is the generated random num")
+
+
+        function randomInt(mini, maxi){
+            return mini + Math.floor( Math.random() * (maxi- mini +1 ))
+        }
+
+        console.log(randomInt(0, 20))
+
+
+        var greeting = function(){
+            console.log("hello from the greeting func")
+        }
+
+        greeting()
+
+
+    </script>
+    
+</body>
+</html> 

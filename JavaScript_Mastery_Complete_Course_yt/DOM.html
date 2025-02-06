@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM examples</title>
+</head>
+<style>
+    #div1{
+        background-color: orange;
+    }
+</style>
+<body>
+    <p id="one" class="pclass two"> Here is some text</p>
+
+    <p  class="pclass">here is paragraph 1</p>
+    <p>here is paragraph 2</p>
+    <p class="pclass two" >here is paragraph 3</p>
+    <p>here is paragraph 4</p>
+
+    <div  id="div1">
+        <h2>Inside a div</h2>
+    </div>
+
+
+
+
+
+    <form>
+        <label>
+            <input type="checkbox">  Yes!
+        </label>
+    </form>
+
+
+
+
+    <script>
+        document.getElementById("one").style.fontSize = "30px";
+        var all_paragraphs = document.getElementsByTagName("p");
+        // console.log(all_paragraphs) 
+
+        // document.getElementsByClassName()
+
+        // ///////   using querySelector()
+
+        var mytext = document.querySelector(".pclass")
+        mytext.style.color = "blue"
+
+        // //////// querySelectorAll()
+        var mytext_col = document.querySelectorAll(".pclass.two")
+        mytext_col[0].style.color = "red"
+        mytext_col[1].style.color = "red"
+
+        // //////// innerHTML
+
+        var mydiv = document.getElementById("div1")
+        mydiv.innerHTML = "<p>here is paragraph in the div</p>" 
+
+        // //////// className 4h30min 
+
+ 
+        // //////// Using setAttribute 4h31min 
+        var mycheckbox = document.querySelector("input");
+        mycheckbox.setAttribute("checked", "checked");
+
+
+
+
+
+        
+
+    </script>
+
+
+
+</body>
+
+</html> 
