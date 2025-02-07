@@ -34,9 +34,11 @@
     </form>
 
 
-    <button>Don't press me</button>
+    <button>Don't press me</button> <br>
 
 
+
+    <a href="https://fast.com/">Go to fast.com </a>
 
 
     <script>
@@ -101,6 +103,14 @@
             alert("I told you not to press me:)")
         }) 
 
+
+        // ////////   Preventing default Behaviour
+
+        var link   = document.querySelector("a");
+        link.addEventListener("click", function(event){
+            event.preventDefault();
+            alert("Do not go to fast.com")
+        })
 
         
 

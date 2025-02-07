@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Events</title>
+
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h2>Events submission</h2>
+
+    <form  method="get">
+        <label >
+            Your Name: <input type="text" name="name" >
+        </label>
+        <input type="submit" value="send">
+    </form>
+
+    <h1>Mouseover, Mouseout Events:  Roll your mouse over the  box</h1>
+
+    <div> <p>my div</p></div>
+    
+<script>
+    var myForm = document.querySelector("form");
+    myForm.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        var formData = document.querySelector("input").value;
+        alert(formData)
+    })
+
+
+    // ///////  Mouseover, Mouseout Events
+
+
+
+    // var heading = document.querySelector("h1");
+    // var box = document.querySelector("div");
+
+
+    // box.addEventListener("mouseover", function(){
+    //     heading.innerHTML = "The mouse is over the box";
+
+    // });
+
+    // box.addEventListener("mouseout", function(){
+    //     heading.innerHTML = "The mouse has left the box";
+
+    // });
+
+    // heading.addEventListener("mouseover", function(){
+    //     heading.innerHTML = "Roll your mouse over the box ";  
+    // })
+
+
+    // ///////  Scroll events
+
+    
+
+
+</script>
+
+</body>
+</html>
