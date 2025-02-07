@@ -8,7 +8,7 @@
     <style>
         div{
             width: 50px;
-            height: 50px;
+            height: 500px;
             background-color: rebeccapurple;
         }
     </style>
@@ -26,9 +26,15 @@
         <input type="submit" value="send">
     </form>
 
-    <h1>Mouseover, Mouseout Events:  Roll your mouse over the  box</h1>
 
+    <h1>Mouseover, Mouseout Events:  Roll your mouse over the  box</h1>
+    <!-- <div> <p>my div</p></div> -->
+
+
+    <h1>capture the scroll event</h1>
     <div> <p>my div</p></div>
+
+
     
 <script>
     var myForm = document.querySelector("form");
@@ -63,9 +69,45 @@
     // })
 
 
+
+
     // ///////  Scroll events
 
-    
+    // var pagetop;
+
+    // window.addEventListener("scroll", function(){
+    //     pagetop = window.pageYOffset;
+    //     console.log(pagetop);
+    // })
+
+
+    // ///////  window Resizing
+
+    // window.addEventListener("resize", function(){
+        // console.log("page width is ${window.innerWidth}");
+        // console.log("page height is ${window.innerHeight}");
+    // });
+
+
+
+    // /////// Key Down Event
+
+    // document.addEventListener("keydown",function(){
+    //     alert("A key was pressed");
+    // });
+
+    document.addEventListener("keydown",function(event){
+        // alert(`A ${event.which} key was pressed`);
+        alert(`A ${event.key} key was pressed`);
+    }); 
+     
+
+
+
+
+
+
+
 
 
 </script>
