@@ -20,6 +20,7 @@
 
     <div  id="div1">
         <h2>Inside a div</h2>
+        <h2>Inside a div x2</h2>
     </div>
 
 
@@ -31,6 +32,9 @@
             <input type="checkbox">  Yes!
         </label>
     </form>
+
+
+    <button>Don't press me</button>
 
 
 
@@ -55,7 +59,7 @@
         // //////// innerHTML
 
         var mydiv = document.getElementById("div1")
-        mydiv.innerHTML = "<p>here is paragraph in the div</p>" 
+        // mydiv.innerHTML = "<p>here is paragraph in the div</p>" 
 
         // //////// className 4h30min 
 
@@ -64,8 +68,38 @@
         var mycheckbox = document.querySelector("input");
         mycheckbox.setAttribute("checked", "checked");
 
+        // //////// Using createElement, createTextNode and appendChild
+
+        var mytag = document.createElement("p")
+        var myentence = document.createTextNode(" created with createTextNode and append here with  appendChild")
+        mytag.appendChild(myentence)
+        document.querySelector("div").appendChild(mytag)
 
 
+        // ////////    Using removeChild()
+
+        var mydiv2 = document.querySelector("div");
+        mydiv2.removeChild(mydiv2.children[0])
+        console.log(mydiv2)
+
+        // ////////   Events
+
+        var btn = document.querySelector("button")
+        function ouch(){
+            alert("I told you not to press me:)")
+        }
+
+        // btn.onclick = ouch
+
+        // ////////   Events Object
+
+        var btn = document.querySelector("button")
+        btn.addEventListener("click",  function(event){
+
+            event.target.style.backgroundColor = "red";
+
+            alert("I told you not to press me:)")
+        }) 
 
 
         
