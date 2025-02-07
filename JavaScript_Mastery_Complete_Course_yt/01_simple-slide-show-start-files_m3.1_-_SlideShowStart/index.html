@@ -11,6 +11,56 @@
     </div>
     
     <p><a href="#" id="previous">previous</a> --- <a href="#" id="next">next</a></p>
+
+
+
+    <script>
+
+        const Im_list = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg","image5.jpg"];
+        var curr_img_id = 0;
+
+
+        var img_src = document.getElementById("myimage")
+
+
+        // ///////  For next
+
+        function get_next(){
+            if (curr_img_id >= Im_list.length -1){
+                curr_img_id = 0;
+            }
+            else {
+                curr_img_id++;
+            }
+
+            img_src.src = Im_list[curr_img_id];
+        }
+
+        var btn_for_next = document.getElementById("next");
+        btn_for_next.onclick = get_next;
+
+        // ///////  For previous
+
+
+        function get_previous(){
+            if (curr_img_id <= 0){
+                curr_img_id = Im_list.length -1;
+            }
+            else {
+                curr_img_id--;
+            }
+
+            img_src.src = Im_list[curr_img_id];
+        }
+
+        var btn_for_previous = document.getElementById("previous");
+        btn_for_previous.onclick = get_previous;
+
+
+        // ///////  Cleaning up 6h 30min
+
+    </script>
+
 </body>
 
 </html>
