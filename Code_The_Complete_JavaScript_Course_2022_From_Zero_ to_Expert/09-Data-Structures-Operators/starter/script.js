@@ -55,3 +55,31 @@ console.log(x, y, z);
 
 const newA = [1, 2, 3, ...A, 10];
 console.log(newA);
+
+const Arr = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+for (const item of Arr) console.log(item);
+
+console.log('---------------');
+
+for (const item of Arr.entries()) console.log(item);
+
+console.log('--------- without Optional Chaining------');
+
+if (restaurant.openingHours && restaurant.openingHours.monday) {
+  console.log(restaurant.openingHours.monday.open);
+}
+
+console.log('--------- with Optional Chaining------');
+console.log(restaurant.openingHours?.monday?.open);
+
+console.log('--------- Maps------');
+
+const resto = new Map();
+
+resto.set('name', 'Classico Italiano');
+
+console.log(resto);
+
+console.log('--------');
+console.log(resto.get('name'));
