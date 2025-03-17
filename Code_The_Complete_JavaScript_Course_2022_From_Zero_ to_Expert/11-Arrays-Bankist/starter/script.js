@@ -94,7 +94,7 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
+// displayMovements(account1.movements);
 
 // Vid 012
 
@@ -131,4 +131,49 @@ const displayBalance = function (movements) {
   labelBalance.textContent = `${totalBalance}€`;
 };
 
-displayBalance(account1.movements);
+// displayBalance(account1.movements);
+
+// Vid 019 Implementing the login
+
+// const loginFunction = function (accs) {
+//   console.log(inputLoginUsername.textContent);
+
+// const userAcc = accs.find(
+//   acc => acc.userName === inputLoginUsername.textContent
+//   );
+//   console.log(userAcc);
+//   // if (inputLoginUsername.textContent === )
+// };
+
+// // const loginFunction2 = loginFunction(accounts);
+
+// // btnLogin.addEventListener('click', loginFunction(accounts));
+
+// btnLogin.addEventListener('click', function () {
+//   console.log(inputLoginUsername.value);
+// });
+
+// console.log(inputLoginUsername.value === '');
+
+let currAcc = '';
+
+btnLogin.addEventListener('click', function (e) {
+  e.preventDefault();
+  // console.log(typeof inputLoginUsername.value);
+  // console.log(typeof inputLoginUsername.value);
+  currAcc = accounts.find(acc => acc.userName === inputLoginUsername.value);
+  // console.log(currAcc);
+  // inputLoginUsername.value.blur();
+  console.log(typeof currAcc?.pin);
+  console.log(typeof inputLoginPin.value);
+
+  if (Number(inputLoginPin.value) === currAcc?.pin) {
+    labelWelcome.textContent = `Welcome, ${currAcc.owner}`;
+
+    containerApp.style.opacity = 100;
+
+    displayMovements(currAcc.movements);
+
+    displayBalance(currAcc.movements);
+  }
+});
