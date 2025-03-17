@@ -163,12 +163,14 @@ btnLogin.addEventListener('click', function (e) {
   // console.log(typeof inputLoginUsername.value);
   currAcc = accounts.find(acc => acc.userName === inputLoginUsername.value);
   // console.log(currAcc);
-  // inputLoginUsername.value.blur();
+
   console.log(typeof currAcc?.pin);
   console.log(typeof inputLoginPin.value);
 
   if (Number(inputLoginPin.value) === currAcc?.pin) {
     labelWelcome.textContent = `Welcome, ${currAcc.owner}`;
+
+    inputLoginUsername.value = inputLoginPin.value = '';
 
     containerApp.style.opacity = 100;
 
