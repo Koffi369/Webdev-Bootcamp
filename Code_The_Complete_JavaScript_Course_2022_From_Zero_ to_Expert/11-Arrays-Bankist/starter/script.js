@@ -116,7 +116,7 @@ const createUserNames = function (accs) {
 createUserNames(accounts);
 console.log(accounts);
 
-// Vid 014
+////////////////////////////////// Vid 014
 
 const computeBalance = function (movements) {
   return movements.reduce(function (acc, cur) {
@@ -215,5 +215,50 @@ btnTransfer.addEventListener('click', function (e) {
     displayMovements(currAcc.movements);
 
     displayBalance(currAcc);
+  }
+});
+
+////////////////////////////////// Vid 021 The findIndex method
+
+// let Arrrrrr = [1, 2, 3, 4, 5];
+// console.log(Arrrrrr.splice(2, 1));
+// console.log(Arrrrrr);
+
+// const inputCloseUsername = document.querySelector('.form__input--user');
+// const inputClosePin = document.querySelector('.form__input--pin');
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const idAccountToDelete = accounts.findIndex(
+    acc => acc.userName === inputCloseUsername?.value
+  );
+
+  if (
+    currAcc.userName === inputCloseUsername?.value &&
+    currAcc.pin === Number(inputClosePin?.value)
+  ) {
+    accounts.splice(idAccountToDelete, 1);
+    containerApp.style.opacity = 0;
+    console.log(accounts);
+  }
+});
+
+////////////////////////////////// Vid 022 some and every
+
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (
+    currAcc.movements.some(elm => elm > Number(inputLoanAmount.value) * 0.1)
+  ) {
+    currAcc.movements.push(Number(inputLoanAmount.value));
+    console.log(currAcc.movements);
+
+    displayMovements(currAcc.movements);
+
+    displayBalance(currAcc);
+
+    inputLoanAmount.value = '';
   }
 });
