@@ -97,3 +97,117 @@ const alertFunc = function (e) {
 };
 
 h1Elm.addEventListener('mouseenter', alertFunc);
+
+////////////// Video 011 Event delegation
+const navElm = document.querySelector('.nav__links');
+
+navElm.addEventListener('click', function (e) {
+  e.preventDefault();
+  // console.log(e.target);
+  // console.log(e.target.href);
+  if (e.target.classList.contains('nav__link')) {
+    console.log(e.target);
+    // const section = document.querySelector(e.target.href)
+    // e.target.scrollIntoView({ behavior: 'smooth' });  //////wrong
+    const toScrollToAttribute = e.target.getAttribute('href');
+    console.log(toScrollToAttribute);
+    const toScrollTo = document.querySelector(toScrollToAttribute);
+    toScrollTo.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+////////////// Video 013 Building a Tabbed Component
+const tabContainer = document.querySelector('.operations__tab-container');
+
+const allContentToDisplay = document.querySelectorAll('.operations__content');
+
+tabContainer.addEventListener('click', function (e) {
+  console.log(e.target);
+
+  const clicked = e.target.closest('.operations__tab');
+
+  console.log(clicked);
+
+  if (!clicked) return;
+
+  const clickedNum = clicked.dataset.tab;
+
+  console.log(clickedNum);
+
+  const contentToDisplay = document.querySelector(
+    `.operations__content--${clickedNum}`
+  );
+
+  console.log(contentToDisplay);
+
+  allContentToDisplay.forEach(elm =>
+    elm.classList.remove('operations__content--active')
+  );
+
+  if (!contentToDisplay.classList.contains('operations__content--active')) {
+    contentToDisplay.classList.add('operations__content--active');
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@');
+  }
+});
+
+////////////// Video 014  Passing arguments to event handlers
+
+const navbar = document.querySelector('.nav');
+
+const opacityControlFunc = function (e, theOpacity) {
+  // const clickedEl = e.target;
+  // const clickedEl = e.target.closest('.nav__link');
+
+  // console.log('clickedEl', clickedEl);
+
+  // const clickedElSiblings = clickedEl
+  //   .closest('.nav')
+  //   .querySelectorAll('.nav__link');
+
+  // console.log(clickedElSiblings);
+
+  // clickedElSiblings.forEach(elm => {
+  //   if (elm !== clickedEl) {
+  //     console.log('@@@@@@@@@@@@@@@@@@@@@@@@');
+  //     elm.style.opacity = 0.5;
+  //   }
+  // });
+
+  if (e.target.classList.contains('nav__link')) {
+    const clickedEl = e.target;
+    console.log('clickedEl', clickedEl);
+
+    const clickedElSiblings = clickedEl
+      .closest('.nav')
+      .querySelectorAll('.nav__link');
+
+    console.log(clickedElSiblings);
+
+    clickedElSiblings.forEach(elm => {
+      if (elm !== clickedEl) {
+        console.log('###### DEBUGGG', theOpacity);
+        elm.style.opacity = theOpacity;
+      }
+    });
+  }
+};
+
+// navbar.addEventListener('mouseover', opacityControlFunc.bind(0.5));
+// navbar.addEventListener('mouseout', opacityControlFunc.bind(1));
+navbar.addEventListener('mouseover', e => opacityControlFunc(e, 0.5));
+navbar.addEventListener('mouseout', e => opacityControlFunc(e, 1));
+
+////////////// Video 015 Implementing a Sticky navigation & The ScrollEvent
+
+const Section1Coords = scrollToSection.getBoundingClientRect();
+
+// console.log('navbarCoords.top', navbarCoords.top);
+
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+  if (window.scrollY > Section1Coords.top) {
+    navbar.classList.add('sticky');
+  } else {
+    navbar.classList.remove('sticky');
+  }
+});
