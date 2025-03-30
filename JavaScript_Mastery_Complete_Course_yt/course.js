@@ -1,4 +1,5 @@
 var age = 25
+var age2 = 25
 var colors = new Array("red", "green") 
 var other_color= ["blue", "yellow", "gray", "white"]
 
