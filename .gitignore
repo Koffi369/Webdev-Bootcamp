@@ -1,2 +1,13 @@
 .*
 !/.gitignore
+
+
+**/node_modules/
+
+
+node_modules/
+
+/node_modules
+
+# eslint cache
+.eslintcache
