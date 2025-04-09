@@ -1,5 +1,7 @@
 import ExpenseItem from "./components/ExpenseItem";
 
+import Card from "./components/Card";
+
 function App() {
   // console.log(new Date(8.64e15).toString());
   // const time = Date.now();
@@ -27,7 +29,7 @@ function App() {
   ];
 
   return (
-    <div>
+    <Card>
       <h2>Hello Let's get started!</h2>
 
       <ExpenseItem
@@ -53,7 +55,7 @@ function App() {
       >
         {" "}
       </ExpenseItem>
-    </div>
+    </Card>
   );
 }
 
