@@ -40,8 +40,35 @@
 
 ///////////////// Video 13
 
+// import "./MyExpenseItem.css";
+// import MyExpenseDate from "./MyExpenseDate";
+
+// function MyExpenseItem(props) {
+//   // const expenseDate = new Date(2021, 2, 28);
+//   // const expensTitle = "Car Insurance";
+//   // const expenseAmount = 294.67;
+
+//   return (
+//     <div className="expense-item">
+//       {/* <div>{expenseDate.toLocaleString()}</div> */}
+
+//       <MyExpenseDate date={props.date}> </MyExpenseDate>
+//       <div className="expense-item__description">
+//         <h2>{props.title}</h2>
+//         <div className="expense-item__price">${props.amount}</div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default MyExpenseItem;
+
+///////////////// Video 16
+
 import "./MyExpenseItem.css";
 import MyExpenseDate from "./MyExpenseDate";
+
+import Card from "../UI/Card";
 
 function MyExpenseItem(props) {
   // const expenseDate = new Date(2021, 2, 28);
@@ -49,7 +76,7 @@ function MyExpenseItem(props) {
   // const expenseAmount = 294.67;
 
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       {/* <div>{expenseDate.toLocaleString()}</div> */}
 
       <MyExpenseDate date={props.date}> </MyExpenseDate>
@@ -57,7 +84,7 @@ function MyExpenseItem(props) {
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 

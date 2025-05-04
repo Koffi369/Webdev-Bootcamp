@@ -47,7 +47,59 @@
 
 // export default ExpenseItem;
 
-// Video 016
+//
+
+//
+
+//
+
+//
+
+////////////////// Video 016
+
+// import "./ExpenseItem.css";
+// import Card from "./Card";
+
+// import ExpenseDate from "./ExpenseDate";
+
+// function ExpenseItem(props) {
+//   return (
+//     <Card className="expense-item">
+//       <ExpenseDate date={props.date}></ExpenseDate>
+
+//       <div className="expense-item__description">
+//         <h2>{props.title}</h2>
+//         <div className="expense-item__price">${props.amount}</div>
+//       </div>
+//     </Card>
+//   );
+// }
+
+// export default ExpenseItem;
+
+//
+
+//
+
+//
+
+//
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////                Chap 4 React State and Working with Events
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+//
+
+//
+
+//
+
+//
+
+////////////////// Video 002
 
 import "./ExpenseItem.css";
 import Card from "./Card";
@@ -55,6 +107,10 @@ import Card from "./Card";
 import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {
+  function clickHandler() {
+    console.log("Button Clicked");
+  }
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date}></ExpenseDate>
@@ -62,6 +118,8 @@ function ExpenseItem(props) {
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
+
+        <button onClick={clickHandler}>MyButton</button>
       </div>
     </Card>
   );
