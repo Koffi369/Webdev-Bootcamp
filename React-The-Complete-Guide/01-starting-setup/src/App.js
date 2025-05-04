@@ -2,7 +2,7 @@
 
 // import Card from "./components/Card";
 
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   // console.log(new Date(8.64e15).toString());
