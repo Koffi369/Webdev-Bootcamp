@@ -99,7 +99,53 @@
 
 //
 
+////////////////////////////////////////////////////////////////////////
+
 ////////////////// Video 002
+
+//
+
+// import "./ExpenseItem.css";
+// import Card from "../UI/Card";
+
+// import ExpenseDate from "./ExpenseDate";
+
+// function ExpenseItem(props) {
+//   function clickHandler() {
+//     console.log("Button Clicked");
+//   }
+
+//   return (
+//     <Card className="expense-item">
+//       <ExpenseDate date={props.date}></ExpenseDate>
+
+//       <div className="expense-item__description">
+//         <h2>{props.title}</h2>
+//         <div className="expense-item__price">${props.amount}</div>
+
+//         <button onClick={clickHandler}>MyButton</button>
+//       </div>
+//     </Card>
+//   );
+// }
+
+// export default ExpenseItem;
+
+//
+
+//
+
+//
+
+//
+
+////////////////////////////////////////////////////////////////////////
+
+////////////////// Video 004 Working with states
+
+//
+
+import React, { useState } from "react";
 
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
@@ -107,8 +153,11 @@ import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {
+  const [title, setTitle] = useState(props.title);
+
   function clickHandler() {
-    console.log("Button Clicked");
+    setTitle("Updated"); // will change title's value on the screen to Updated
+    console.log("title's initial value will not change:  ", title);
   }
 
   return (
@@ -116,7 +165,7 @@ function ExpenseItem(props) {
       <ExpenseDate date={props.date}></ExpenseDate>
 
       <div className="expense-item__description">
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <div className="expense-item__price">${props.amount}</div>
 
         <button onClick={clickHandler}>MyButton</button>
