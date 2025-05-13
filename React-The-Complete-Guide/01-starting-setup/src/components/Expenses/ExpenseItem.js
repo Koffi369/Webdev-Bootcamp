@@ -145,7 +145,7 @@
 
 //
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
@@ -153,25 +153,49 @@ import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {
-  const [title, setTitle] = useState(props.title);
+  // const [title, setTitle] = useState(props.title);
 
-  function clickHandler() {
-    setTitle("Updated"); // will change title's value on the screen to Updated
-    console.log("title's initial value will not change:  ", title);
-  }
+  // function clickHandler() {
+  //   setTitle("Updated"); // will change title's value on the screen to Updated
+  //   // title will hold the previous value (toilet paper) so its initial value will not change at the first click
+  //   // but at the second it will be ('Updated' the value we set previously with setTitle)
+  //   console.log("title =", title);
+  // }
 
   return (
     <Card className="expense-item">
+      {console.log(props.date)}
       <ExpenseDate date={props.date}></ExpenseDate>
-
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
 
-        <button onClick={clickHandler}>MyButton</button>
+        {/* <button onClick={clickHandler}>MyButton</button> */}
       </div>
     </Card>
   );
 }
 
 export default ExpenseItem;
+
+//
+
+//
+
+//
+
+//
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////                Chap 5 Rendering lit and Conditional contents
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+//
+
+//
+
+//
+
+//

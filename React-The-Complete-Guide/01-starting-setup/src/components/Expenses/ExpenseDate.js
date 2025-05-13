@@ -6,7 +6,7 @@ function ExpenseDate(props) {
   const Month = props.date.toLocaleString("eng-US", { month: "long" });
   const day = props.date.toLocaleString("eng-US", { day: "2-digit" });
   const Year = props.date.getFullYear();
-
+  console.log(props.date);
   return (
     <Card className="expense-date">
       <div className="expense-date__month">{Month}</div>
@@ -17,7 +17,6 @@ function ExpenseDate(props) {
 }
 
 export default ExpenseDate;
-
 //
 
 //
@@ -29,6 +28,28 @@ export default ExpenseDate;
 ///////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////                Chap 4 React State and Working with Events
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////                Chap 5 Rendering lit and Conditional contents
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
