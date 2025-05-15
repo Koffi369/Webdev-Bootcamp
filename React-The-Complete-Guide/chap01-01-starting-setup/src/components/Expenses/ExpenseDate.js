@@ -6,7 +6,7 @@ function ExpenseDate(props) {
   const Month = props.date.toLocaleString("eng-US", { month: "long" });
   const day = props.date.toLocaleString("eng-US", { day: "2-digit" });
   const Year = props.date.getFullYear();
-  console.log(props.date);
+  // console.log(props.date);
   return (
     <Card className="expense-date">
       <div className="expense-date__month">{Month}</div>

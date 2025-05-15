@@ -61,8 +61,8 @@ import ExpenseForm from "./ExpenseForm";
 function NewExpense(props) {
   function saveExpenseDataHandler(enteredExpenseData) {
     const localExpenseData = {
-      ...enteredExpenseData,
       id: Math.random().toString(),
+      ...enteredExpenseData,
     };
     console.log(localExpenseData); // the data at this stage will be rendered by the file NewExpense.js in the console
 

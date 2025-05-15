@@ -147,36 +147,36 @@
 
 // import React, { useState } from "react";
 
-import "./ExpenseItem.css";
-import Card from "../UI/Card";
+// import "./ExpenseItem.css";
+// import Card from "../UI/Card";
 
-import ExpenseDate from "./ExpenseDate";
+// import ExpenseDate from "./ExpenseDate";
 
-function ExpenseItem(props) {
-  // const [title, setTitle] = useState(props.title);
+// function ExpenseItem(props) {
+//   // const [title, setTitle] = useState(props.title);
 
-  // function clickHandler() {
-  //   setTitle("Updated"); // will change title's value on the screen to Updated
-  //   // title will hold the previous value (toilet paper) so its initial value will not change at the first click
-  //   // but at the second it will be ('Updated' the value we set previously with setTitle)
-  //   console.log("title =", title);
-  // }
+//   // function clickHandler() {
+//   //   setTitle("Updated"); // will change title's value on the screen to Updated
+//   //   // title will hold the previous value (toilet paper) so its initial value will not change at the first click
+//   //   // but at the second it will be ('Updated' the value we set previously with setTitle)
+//   //   console.log("title =", title);
+//   // }
 
-  return (
-    <Card className="expense-item">
-      {console.log(props.date)}
-      <ExpenseDate date={props.date}></ExpenseDate>
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
+//   return (
+//     <Card className="expense-item">
+//       {/* {console.log(props.date)} */}
+//       <ExpenseDate date={props.date}></ExpenseDate>
+//       <div className="expense-item__description">
+//         <h2>{props.title}</h2>
+//         <div className="expense-item__price">${props.amount}</div>
 
-        {/* <button onClick={clickHandler}>MyButton</button> */}
-      </div>
-    </Card>
-  );
-}
+//         {/* <button onClick={clickHandler}>MyButton</button> */}
+//       </div>
+//     </Card>
+//   );
+// }
 
-export default ExpenseItem;
+// export default ExpenseItem;
 
 //
 
@@ -199,3 +199,35 @@ export default ExpenseItem;
 //
 
 //
+
+//
+
+//
+
+////////////////////////////////////////////////////////////////////////
+
+////////////////// Video 006 Adding Conditional return statement
+//
+
+//
+
+import "./ExpenseItem.css";
+import Card from "../UI/Card";
+
+import ExpenseDate from "./ExpenseDate";
+
+function ExpenseItem(props) {
+  return (
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date}></ExpenseDate>
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+      </Card>
+    </li>
+  );
+}
+
+export default ExpenseItem;
