@@ -1,16 +1,16 @@
-import React from "react";
+// import React from "react";
 
-import "./Button.css";
+// import "./Button.css";
 
-const Button = (props) => {
-  return (
-    <button type={props.type} className="button" onClick={props.onClick}>
-      {props.children}
-    </button>
-  );
-};
+// const Button = (props) => {
+//   return (
+//     <button type={props.type} className="button" onClick={props.onClick}>
+//       {props.children}
+//     </button>
+//   );
+// };
 
-export default Button;
+// export default Button;
 
 //
 
@@ -25,3 +25,29 @@ export default Button;
 //
 
 //
+
+//
+
+//
+
+////////////////////////////////////////////////////////////////////////
+
+////////////////// Video 007 Using CSS Modules
+
+//
+
+//
+
+import React from "react";
+
+import styles from "./Button.module.css";
+
+const Button = (props) => {
+  return (
+    <button type={props.type} className={styles.button} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
+};
+
+export default Button;
