@@ -76,15 +76,17 @@ function MyExpenseItem(props) {
   // const expenseAmount = 294.67;
 
   return (
-    <Card className="expense-item">
-      {/* <div>{expenseDate.toLocaleString()}</div> */}
+    <li>
+      <Card className="expense-item">
+        {/* <div>{expenseDate.toLocaleString()}</div> */}
 
-      <MyExpenseDate date={props.date}> </MyExpenseDate>
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-    </Card>
+        <MyExpenseDate date={props.date}> </MyExpenseDate>
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+      </Card>
+    </li>
   );
 }
 

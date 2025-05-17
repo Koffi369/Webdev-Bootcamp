@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import './CourseGoalItem.css';
+import "./CourseGoalItem.css";
 
-const CourseGoalItem = props => {
+const CourseGoalItem = (props) => {
   // const [deleteText, setDeleteText] = useState('');
 
   const deleteHandler = () => {
@@ -18,3 +18,17 @@ const CourseGoalItem = props => {
 };
 
 export default CourseGoalItem;
+
+//
+
+//
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////                Chap 6 Styling react components
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+//
+
+//

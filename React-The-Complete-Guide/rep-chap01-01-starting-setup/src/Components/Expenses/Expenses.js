@@ -135,14 +135,126 @@
 
 ////////////////////////////////////////////////////////////////////////
 
-////////////////// Video 004 Undeerstanding Key
+////////////////// Video 004 Undeerstanding Key + Asignement
+
+//
+
+// import React, { useState } from "react";
+// import MyExpenseItem from "./MyExpenseItem";
+// import ExpensesFilter from "./ExpensesFilter";
+
+// import "./Expenses.css";
+
+// import Card from "../UI/Card";
+
+// function Expenses(props) {
+//   const [filteredYear, setFilteredYear] = useState("2020");
+
+//   const filterChangeHandler = (selectedYear) => {
+//     setFilteredYear(selectedYear);
+//   };
+//   console.log(filteredYear);
+
+//   const filteredData = props.expenseData.filter((eachExpense) => {
+//     return eachExpense.date.getFullYear().toString() === filteredYear;
+//   });
+//   return (
+//     <Card className="expenses">
+//       <ExpensesFilter
+//         selected={filteredYear}
+//         onChangeFilter={filterChangeHandler}
+//       />
+
+//       {filteredData.map((eachExpense) => (
+//         <MyExpenseItem
+//           key={eachExpense.id}
+//           title={eachExpense.title}
+//           amount={eachExpense.amount}
+//           date={eachExpense.date}
+//         ></MyExpenseItem>
+//       ))}
+//     </Card>
+//   );
+// }
+
+// export default Expenses;
+
+//
+
+//
+
+////////////////////////////////////////////////////////////////////////
+
 ////////////////// Video 005 outputing conditional content
 
 //
 
+//
+
+// import React, { useState } from "react";
+// import MyExpenseItem from "./MyExpenseItem";
+// import ExpensesFilter from "./ExpensesFilter";
+
+// import "./Expenses.css";
+
+// import Card from "../UI/Card";
+
+// function Expenses(props) {
+//   const [filteredYear, setFilteredYear] = useState("2020");
+
+//   const filterChangeHandler = (selectedYear) => {
+//     setFilteredYear(selectedYear);
+//   };
+//   console.log(filteredYear);
+
+//   const filteredData = props.expenseData.filter((eachExpense) => {
+//     return eachExpense.date.getFullYear().toString() === filteredYear;
+//   });
+
+//   let displayContent = <h2>No Expenes found</h2>;
+
+//   if (filteredData.length > 0) {
+//     displayContent = filteredData.map((eachExpense) => (
+//       <MyExpenseItem
+//         key={eachExpense.id}
+//         title={eachExpense.title}
+//         amount={eachExpense.amount}
+//         date={eachExpense.date}
+//       ></MyExpenseItem>
+//     ));
+//   }
+
+//   return (
+//     <Card className="expenses">
+//       <ExpensesFilter
+//         selected={filteredYear}
+//         onChangeFilter={filterChangeHandler}
+//       />
+
+//       {displayContent}
+//     </Card>
+//   );
+// }
+
+// export default Expenses;
+
+//
+
+//
+
+////////////////////////////////////////////////////////////////////////
+
+////////////////// Video 006 Adding conditionnal return statement
+
+//
+
+//
+
 import React, { useState } from "react";
-import MyExpenseItem from "./MyExpenseItem";
+
 import ExpensesFilter from "./ExpensesFilter";
+
+import ExpensesList from "./ExpensesList";
 
 import "./Expenses.css";
 
@@ -159,6 +271,20 @@ function Expenses(props) {
   const filteredData = props.expenseData.filter((eachExpense) => {
     return eachExpense.date.getFullYear().toString() === filteredYear;
   });
+
+  // let displayContent = <h2>No Expenes found</h2>;
+
+  // if (filteredData.length > 0) {
+  //   displayContent = filteredData.map((eachExpense) => (
+  //     <MyExpenseItem
+  //       key={eachExpense.id}
+  //       title={eachExpense.title}
+  //       amount={eachExpense.amount}
+  //       date={eachExpense.date}
+  //     ></MyExpenseItem>
+  //   ));
+  // }
+
   return (
     <Card className="expenses">
       <ExpensesFilter
@@ -166,14 +292,8 @@ function Expenses(props) {
         onChangeFilter={filterChangeHandler}
       />
 
-      {filteredData.map((eachExpense) => (
-        <MyExpenseItem
-          key={eachExpense.id}
-          title={eachExpense.title}
-          amount={eachExpense.amount}
-          date={eachExpense.date}
-        ></MyExpenseItem>
-      ))}
+      {/* {displayContent} */}
+      <ExpensesList content={filteredData}> </ExpensesList>
     </Card>
   );
 }
